@@ -1,0 +1,105 @@
+// if and if else works same as c++
+
+//---------------------------SWITCH---------------------------------------------
+no need for break statement and 'when' keyword is brought to put the extra condition
+void main() {
+  int age=65;
+  var eligible=false;
+  switch(age){
+    case 20 when eligible==true: //extra keyword----------
+      print('yes');      
+    case 65:
+      print('65');
+    default:
+      print('none');
+  }
+}
+
+//-----------------------------------------loops-------------------------------------
+1. for(initialisation;condition;updation){}
+2. while(condition) {}
+3. do{}while(condition);
+
+......there is 'break' and 'continue'.....and work same as c++
+
+//-----------------------------------------------FUNCTIONS-------------------------------------------------------
+1.same as c++
+2. 
+  void main() {
+  print(sum(2,3).runtimeType); // int
+}
+sum(int a, int b){ //you can declare the returntype here in front or begining ...
+  return a+b;
+}
+
+3.
+void main() {
+  print(sum()); //the return type is (string, int) //output: ('swati' ,21)
+   print(sum().$1); //print swati
+    print(sum().$2); //print 21
+}
+
+(String, int) sum(){
+  return ('swati',21);
+}
+
+4. // storing function into a variable
+
+  void main() {
+  var name = sum(); // stored
+  print(name); //output: (swati, 21)
+}
+
+(String, int) sum() {
+  return ('swati', 21);
+}
+
+5. //if want to store separately:
+  void main() {
+  var (name,roll) = sum();
+  print(name); //output:swati
+}
+
+(String, int) sum() {
+  return ('swati', 21);
+}
+
+---------------------------------------POSITONAL ARGUMENTS-----------------------------------------------------
+1. 
+  void main() {
+  String name='swati';
+  int  roll=21;
+  p(name,roll);
+}
+
+void p(String n, int r) { //here if positions are exchanged this will throw an error
+  print("$n and $r");  
+}
+
+--------------------------------------NAMED ARGUMENTS-----------------------------------------------------------
+void main() {
+  var name='swati';
+  var roll=21;
+  p(name:name,roll:roll);
+}
+
+void p( {required String name, required int roll}) {
+  print("$name and $roll");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
