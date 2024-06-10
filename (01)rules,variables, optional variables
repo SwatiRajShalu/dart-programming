@@ -1,0 +1,55 @@
+1. we can use ' ' or " " to write string into it
+
+2.
+void main() {
+    print('3'+3); // argument type int cannot be assigned to the parameter type string
+    print('3'*3); //333
+}
+
+3. dart follows bodmas ...operator precidence
+4. comments: // single line , /*   -----------------*/ multiline comments
+//---------------------------------------------VARIABLES--------------------------------------------------
+
+1. int firstvalue=20; //this can not be assigned double values otherwise through error
+// firstvalue.isEven; //true
+
+2. double secondvalue=20.90; //20.9
+
+3.String value=""; or '';
+  String name='swati raj';
+  name= '$name shalu';
+  print('the name of the child is ${name}');
+  print('the name of the child is ${name.isEmpty}'); //string interpolation
+
+  if written like: \$name then $ losses its importance
+
+  multiline string:   ''' heloo          world'''  same is printed
+  next line : 'heloo \nWorld'
+
+4.bool value= true; or false;
+
+5.dynamic value=18.5; //it can take any type and change type is also allowed
+//value.runtimeType; //double
+
+6.-------------------------------------------------var/final / constant---------------------------------------------
+//mutable: can be changed it value
+1. var somevalue='10'; //type:string , any type can be there but ....cannot be changed in future its type
+
+2.final somevalue='10'; // ultimate value and cannot be changed
+3.const somevalue='10'; // constant
+
+//----------------------------------------------------OPTIONAL VARIABLES--------------------------------------------
+
+int value=null;// will throw a error
+ SOUND NULL SAFETY
+int? value; //value is assigned null 
+void main() {   
+  int? value=null;
+  print(value); //null
+  value=45;
+  value=null; //again value can be assigned null
+  print(value); //null
+  print(value?.isEven); //null
+  print(value?.isEven??'this is not having any value');//this is not having any value
+}
+
