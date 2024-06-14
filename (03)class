@@ -1,0 +1,93 @@
+//-----------------------------we made instance of class---------------------
+void main() {
+  print(Cookie()); // instance of 'Cookie'
+}
+
+class Cookie{
+  String shape='circle';
+  double size=15.2;
+  
+  void  baking(String shape, double size){
+    print('$shape of size $size is baking');
+  }
+}
+
+//-----------------------------
+
+void main() {
+  Cookie cook1= Cookie(); //intance(cook1) of class is made
+  cook1.shape='love'; //the behaviour of that instance(cook1) is changes
+  cook1.baking(); //love of size 15.2 is baking
+  Cookie().baking(); //another instance is made .....printed......circle of size 15.2 is baking
+}
+
+class Cookie{
+  String shape='circle';
+  double size=15.2;
+  
+  void  baking(){
+    print('$shape of size $size is baking');
+  }
+}
+
+//----if i declare the class variables as final then the values cannot be changes
+//----by default the members of class is decalred private and can be accessed inside the main function
+
+//-------------------------------------Private Variables---------------------------------------------------------
+these are accesseeble inside same file
+syntax: int _name;
+
+
+//-------------------------------------Getters/ Setters----------------------------------------------------------
+void main() {
+  Cookie cook1= Cookie();
+  cook1._shape='love';
+  cook1.baking();
+  Cookie().baking();
+  print(cook1.sizeget); //15.2
+  //cook1.sizeset(160.0);// wrong-------------------------------
+  cook1.sizeset = 160.0; // setter value is set --------------------------
+  print(cook1.sizeget); //160
+}
+
+class Cookie{
+  String _shape='circle'; //----------------private variables-------------
+  double _size=15.2;
+
+  double get sizeget =>  _size; //----------------------------------getter--------------
+  
+  set sizeset(double s){ //------------------------------------setter----------------
+    _size=s; //----------set the value-------------------
+  }
+  
+  void  baking(){
+    print('$_shape of size $_size is baking');
+  }
+}
+
+
+
+//-------------------------------------Static function and Static variables---------------------------------------
+
+----------when i use static variable , then no instance is created or no  constructer is called-----------------
+void main() {
+  print(Constants.greetings); //without making instance of class the property of class which has static keyword is accessed-----------
+}
+
+class Constants{
+  static String greetings='welcome to our comapany'; //------------------static keyword -----------------------------
+  String bye='bye!!';
+}
+
+//-------------------------static functions--------
+void main() {
+  print(Constants.greetings);
+  print(Constants.heightget);
+}
+
+class Constants{
+  static String greetings='welcome to our comapany';
+  String bye='bye!!';
+  static int height=160; //-------in order to return the height in heightget which is static ...then have to make height also static
+  static int get heightget => height;
+}
