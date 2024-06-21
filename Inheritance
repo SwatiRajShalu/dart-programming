@@ -1,0 +1,71 @@
+//---------------------------------------simple inheritance---------------------------------------
+//-----------in dart multiple inheritance is not used-----------------------
+void main() {
+  car car1= car();  //---------------------hired all the elements defined inside the class (Vehical) in class (car)----------------
+  car1.printcar();
+  car1.accelarater(20); //----------calling function of Vehical class-------------------------------
+  car1.printcar();
+}
+
+class Vehical{
+  int speed=10;
+  bool isEngineWorking=false;
+  
+  void accelarater(int s){
+    speed+=s;
+  }  
+}
+
+class car extends Vehical{
+  int noOfWheels=4;
+  
+  void printcar(){
+    isEngineWorking=true; //-----------------------------------inherited variable---------------
+    print("car : $isEngineWorking : speed : $speed"); //----------------used inheritated variable-------------------
+  }  
+}
+
+//-------------------------------------------we can type cast the data type---------------------using 'as'---------------------
+
+void main() {
+  Vehical car1= car();
+  (car1 as car).printcar();  //----------typecasted the type from Vehical to car ....and it will be used at everywhere inside prgram----
+  //----if didnt used this then it will produce and error .....because 'printcar()' is not the function defined inside class Vehical----
+  car1.accelarater(20);
+  car1.printcar();
+}
+
+//------------------multilevel inheritance----------------------------------------------------
+
+void main() {
+  car car1= car(); //this class will inherit the members of class Vehical , Something------------
+  car1.printcar();
+  car1.accelarater(); //----------------the function of class Vehical is called------------
+  car1.printcar();
+}
+
+class SomeClass{       //-----------------------------new base class-------------------------
+  void accelarater(){
+    print("speed will be accelarated by 10??");
+  }
+}
+class Vehical extends SomeClass{ //------------------inheritated the base class(SomeClass)-------------------------
+  int speed=10;
+  bool isEngineWorking=false;
+  
+  @override
+  int accelarater(){ //--------------------------override the function there in base class(SomeClass)---------------------
+    speed+=10;
+    return speed;
+  }  
+}
+
+class car extends Vehical{
+  int noOfWheels=4;
+  
+  void printcar(){
+    isEngineWorking=true;
+    print("car : $isEngineWorking : speed : $speed");
+  }  
+}
+
