@@ -69,3 +69,26 @@ class car extends Vehical{
   }  
 }
 
+//-------------------------------implements keywords----------------------------------
+
+when implement keyword is used than all the variable /functions  in base class needs to be @override
+otherwise that will produce a error
+
+//--------------abstract class functions same as in java------------------------
+void main() {
+  
+   car obj= car();
+  obj.hell();
+}
+
+abstract class vehical{
+  void hell();
+}
+
+class car extends vehical{
+  @override
+  void hell(){
+    print("this is car");
+  }
+}
+
