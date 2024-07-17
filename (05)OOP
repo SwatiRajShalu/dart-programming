@@ -1,0 +1,42 @@
+//----------------------------------mixin
+
+void main() {
+  both().func();
+  print(both().height);
+  
+}
+
+mixin Animal{
+  String sound='bark';
+  String color='yellow';
+}
+
+mixin Human{
+  int height=170; 
+}
+
+class both with Animal , Human{
+  void func(){
+  print('$sound is the sound of $color color heihgt $height of a animal');
+}}
+
+//---------------------CLASS MODIFIER---------------------------------------------------------------------------
+NOTE-------------one could not instanise the abstract class 
+
+sealed class animal{} //cannot be instantise
+final class animal{}
+base class animal{}
+interface class animal{} // implements is used
+abstract interface class animal{}
+mixin class animal{}
+
+//--------------------------------------------LIST------------------------------------
+
+LIST IS abstract class
+thus List list= List() is wrong
+List list=[10,11,12]; is right we can add any type of variable into it like [10,11,12,'swati','w',20.3]; or List<Object> list=[10,'swati']
+   object is the part of non-nullable dart hiearchy----------------means value cannot be 0
+to make it data type specific:
+List<int> list= [10,12,14]
+
+thus void fun<data type>(){}
